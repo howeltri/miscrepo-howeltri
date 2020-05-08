@@ -1,0 +1,1 @@
+print("Day 2 is stagnation")
