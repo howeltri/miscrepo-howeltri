@@ -47,3 +47,6 @@
 # [<your_operation> for <item_to_operate_on> in <list>]
 # You can use conditional logic in there too!
 # list2 = [num for num in numbers if num is True]
+# even better
+# list3 = [num*2 if num % 2 == 0 else num/2 for num in numbers]
+
