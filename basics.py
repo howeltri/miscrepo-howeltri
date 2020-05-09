@@ -12,4 +12,10 @@
 # comparisons == != > < >= <=
 # and or not
 # == = is the value/s the same while is = is the memory location the same
+# range ~ typically used for for loops
+# range(7) - 0 through 6
+# range(1,8) - 1 through 7
+# range(1, 10, 2) odds 1 to 10
+# range(7, 0, -1) decrement
+# break out of loops with: break
 
