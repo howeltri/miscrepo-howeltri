@@ -82,6 +82,49 @@
 # basically {key:value for key,value in dictionary.items()}
 # With conditional logic - {key:(value with logic - must include if and else) for value in dictionary.items()}
 # conditional logic has to include if and else because it won't leave the key or value as None by default
-
-
-
+#--------------------Tuples+Sets-----------------------------------
+# tuple - ordered collection
+# num = (1,2,3) - tuples are immutable - can't add to them or change
+# faster than lists!
+# data does not need to be unique
+# tuple can be nested in a dict where list CAN NOT
+# .count(<value>)
+# .index(<value>)
+# Sets - no duplicates and no order
+# cannot acccess by index because there is no order
+# set = {1,4,5, 'a'}
+# .add(<value>) - throws no error if already in set
+# .remove(<value>) - throws error if item isn't in there to remove
+# .copy()
+# .clear()
+# Set Math
+# set_name | 2ndset_name - only prints out unique from both
+# set_name & 2ndset_name - only prints out values in both
+# set comprehension
+# {x**2 for s in range(10)} - no key, value because its a set and is not key value paired
+#--------------------Functions--------------------------------------
+# def name() or(<parameter>, ... n param) Default (<paramater>=<value>
+# default values need to go at the end or they all need to have def values
+# kwargs
+# invoke a func like add_func(func=add, denominator=2)
+# scope
+# use global <var> to refer to a global variable inside your func
+# if you're trying to call a variable from a nested function
+# so calling a var in the function above you need to declare as nonlocal!
+#--------------------docstrings--------------------------
+"""This is a docstring and it will go for many many lines and more if you'd like"""
+# also for help you can call these for any built in func and for any you have defined a docstring
+# within
+# like this func.__doc__
+# right after your def put the doc string
+# def func(<val>):
+"""This is the docstring for instructions on running this"""
+#------------------args and kwargs-------------------------
+# *args - paramater we can pass to func with whatever we want
+# collects any num of additional parameters and creates as a tuple
+# could be named *<anything> but *args is standard
+# when you reference the tuple it provides you just reference as args
+# **kwargs
+# stores as many as you want in a dictionary
+# def fav_colors(**kwargs) or could be**anything
+# fav_colors(colt="red",scout="green"...etc)

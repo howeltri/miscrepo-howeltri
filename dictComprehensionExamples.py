@@ -10,3 +10,4 @@ answer = {k:v for k,v in person}
 answer = dict(person)
 answer = {letter:0 for letter in 'aeiou'}
 answer = {asc:chr(asc) for asc in range(65,91)}
+return {letter: value.count(letter) for letter in value}
