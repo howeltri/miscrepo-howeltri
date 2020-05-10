@@ -49,6 +49,18 @@
 # list2 = [num for num in numbers if num is True]
 # even better
 # list3 = [num*2 if num % 2 == 0 else num/2 for num in numbers]
+
+answer0 = [num for num in [1,2,3,4] if num in [3,4,5,6]]
+answer1 = [name[::-1].lower() for name in ["Elie", "Tim", "Matt"]]
+names = ["Ellie", "Tim", "Matt"]
+answer2 = [name[0] for name in names]
+numbers = [1,2,3,4,5,6]
+answer3 = [num for num in numbers if num % 2 == 0]
+answer4 =  [num for num in range(1, 101) if num % 12 == 0]
+answer5 = [letter for letter in 'amazing' if letter not in 'aeiou']
+answer6 = [[num for num in range(3)] for high_num in range(3)]
+answer7 = [[num for num in range(10)] for high_num in range(10)]
+
 # -------------nested lists---------------------------------
 # nest_list = [[1,23,4][6,7,8,9]['hello','goodbye!']]
 # nest_list[0][1] = 23
@@ -82,6 +94,20 @@
 # basically {key:value for key,value in dictionary.items()}
 # With conditional logic - {key:(value with logic - must include if and else) for value in dictionary.items()}
 # conditional logic has to include if and else because it won't leave the key or value as None by default
+
+new_dict = {num: num**2 for num in [1,2,3,4,5]}
+instructor = {'name': "sam", 'city': 'ashburn', 'pal': 'scout'}
+yelling_instructor = {key.upper():val.upper() for key, val in instructor.items()}
+yelling_instructor_logic = {(key.upper() if key == "pal" else key):val.upper() for key, val in instructor.items()}
+answer = {list1[i]:list2[i] for i in range(0, len(list1))}
+person = [["name", "Jared"], ["job", "Musician"], ["city", "Bern"]]
+#The three of these would work
+answer = {persons[0]:persons[1] for persons in person}
+answer = {k:v for k,v in person}
+answer = dict(person)
+answer = {letter:0 for letter in 'aeiou'}
+answer = {asc:chr(asc) for asc in range(65,91)}
+
 #--------------------Tuples+Sets-----------------------------------
 # tuple - ordered collection
 # num = (1,2,3) - tuples are immutable - can't add to them or change
@@ -134,15 +160,15 @@
 # to unpack tuples and lists just add * in fromt of the variable and
 # they'll be passed one at a time
 # if i had list [1,4,6,7,3,1,54,7,89,0,7,4r3455,1] and wanted to pass into a func as indiv args
-# do func(*list)
+myFunc(*list)
 # dictionary unpacking
 # just do **<dict> when passing to a func
 #--------------------Lambdas--------------------------------
 # lambda is basically a no named one line function, called anonymous function in other languages
 # ex: square_root = lambda <variable>: <variable> * <variable>
-# ex: add = lambda a,b: a + b
+add = lambda a,b: a + b
 # then you call these as you would a function
-# print(add(3,10))
+print(add(3,10))
 # lambdas are super nice to just pass a no name function into another function
 #--------------------map-----------------------------------
 # GO BACK AND FINISH THIS SECTION
@@ -165,12 +191,12 @@
 #   print("That's a no go")
 # print("you tried")
 #
-# try:
-# except NameError:
-#   print("var needs to be defined")
-# except ZeroDivisionError as err:
-#   print("Don't divide by 0")
-#   print(err)
+try:
+except NameError:
+    print("var needs to be defined")
+except ZeroDivisionError as err:
+    print("Don't divide by 0")
+    print(err)
 #
 # try:
 # except: #runs if try fails
@@ -179,6 +205,6 @@
 #
 #--------------------Debugging------------------------------
 # with pdb (python debugger)
-# import pdb; pdb.set_trace()
+import pdb; pdb.set_trace()
 # can explore all values that are set and step through by pressing 'n' quit with 'q'
 # 'c' to move all the way through
