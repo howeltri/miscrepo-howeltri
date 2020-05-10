@@ -42,8 +42,46 @@
 # finally count by 2 across a range ~ list[:10:2]
 # reverse a list ~ list_r = list[::-1]
 # can swap in lists by doing names[0], names[1] = names[1], names[0]
-# --------------List Comprehension-----------------------
+# --------------List Comprehension----------------------- see quickListCompExamples.py
 # new_list_from_old = [num * 2 for num in numbers]
 # [<your_operation> for <item_to_operate_on> in <list>]
 # You can use conditional logic in there too!
 # list2 = [num for num in numbers if num is True]
+# even better
+# list3 = [num*2 if num % 2 == 0 else num/2 for num in numbers]
+# -------------nested lists---------------------------------
+# nest_list = [[1,23,4][6,7,8,9]['hello','goodbye!']]
+# nest_list[0][1] = 23
+# nested list compreehension
+# [[print(val) for val in upper_vals] for upper_vals in nested_list]
+# --------------dictionaries---------------------------
+# key value pair
+# instructor = {
+# "name": "Tristan",
+# "dog": True,
+# etc: etc
+# }
+# OR dict(name="cat", age=5)
+# Access by instructor["name"] - throws error if the <val> isn't in there
+# dict.values() - returns all values as a list
+# can iterate through with [value for value in dict.values()]
+# dict.keys() - returns all keys as a list
+# dict.items() returns tuples but returns key and value for all
+# iterate with for key, value in dict.items() OR [key, value for key, value in dict.items()]
+# to check if in a dictionary... you guessed it "if phone in instructor" - CHECKS FOR KEYS!!! NOT VAL
+# To check for vals - if 4 in instructor.values()
+# .clear() - empty dictionary
+# .copy() - clones with same vals but dif mem locations
+# .fromkeys - fromkeys(<list_of_keys>, default_value_to_sign_to_each)
+# .get(<key>) - returns value assigned to a key
+# .pop(<key>)
+# .popitem() - pops a random item
+# .update() - adds every key value to that dictionary thats not already in it and will update any values that have that key
+# ------------------Dictionary Comprehension------------ see dictComprehensionExamples.py
+# squared_numbers = {key: value ** 2 for key,value in numbers.items()}
+# basically {key:value for key,value in dictionary.items()}
+# With conditional logic - {key:(value with logic - must include if and else) for value in dictionary.items()}
+# conditional logic has to include if and else because it won't leave the key or value as None by default
+
+
+
