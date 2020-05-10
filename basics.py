@@ -128,3 +128,57 @@
 # stores as many as you want in a dictionary
 # def fav_colors(**kwargs) or could be**anything
 # fav_colors(colt="red",scout="green"...etc)
+# parameter ordering
+# parameters *args default parameters *kwargs
+# example display(a,b,*args,instructor="ham",**kwargs)
+# to unpack tuples and lists just add * in fromt of the variable and
+# they'll be passed one at a time
+# if i had list [1,4,6,7,3,1,54,7,89,0,7,4r3455,1] and wanted to pass into a func as indiv args
+# do func(*list)
+# dictionary unpacking
+# just do **<dict> when passing to a func
+#--------------------Lambdas--------------------------------
+# lambda is basically a no named one line function, called anonymous function in other languages
+# ex: square_root = lambda <variable>: <variable> * <variable>
+# ex: add = lambda a,b: a + b
+# then you call these as you would a function
+# print(add(3,10))
+# lambdas are super nice to just pass a no name function into another function
+#--------------------map-----------------------------------
+# GO BACK AND FINISH THIS SECTION
+
+
+
+#--------------------debugging + error handling------------------
+# common errors
+# syntax, name (variable isn't defined), type (wrong type), index (out of range etc)
+# value (recieves appropriate arg type but inaprop val in it
+# Attribute error - variable does not have an attribute
+# Raising our own errors
+# can raise a variety of exceptions ~ most vague is raise Exception
+# more specific is raise TypeErrorr("Oh no") or raise ValueError("Oh no again") etc
+# could be a check for a func like ~ if type(color) is not str
+#--------------------handling errors------------------------
+# try:   ~ at its most basic
+#   randomness
+# except:
+#   print("That's a no go")
+# print("you tried")
+#
+# try:
+# except NameError:
+#   print("var needs to be defined")
+# except ZeroDivisionError as err:
+#   print("Don't divide by 0")
+#   print(err)
+#
+# try:
+# except: #runs if try fails
+# else:  #runs if try succeeds
+# finally: # runs even if the previous ones had break statements
+#
+#--------------------Debugging------------------------------
+# with pdb (python debugger)
+# import pdb; pdb.set_trace()
+# can explore all values that are set and step through by pressing 'n' quit with 'q'
+# 'c' to move all the way through
