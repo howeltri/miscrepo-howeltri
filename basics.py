@@ -197,6 +197,16 @@ except NameError:
 except ZeroDivisionError as err:
     print("Don't divide by 0")
     print(err)
+
+
+def divide(num1, num2):
+    try:
+        a = num1 / num2
+    except ZeroDivisionError:
+        return "Please do not divide by zero"
+    except TypeError:
+        return "Please provide two integers or floats"
+    return a
 #
 # try:
 # except: #runs if try fails
@@ -208,3 +218,23 @@ except ZeroDivisionError as err:
 import pdb; pdb.set_trace()
 # can explore all values that are set and step through by pressing 'n' quit with 'q'
 # 'c' to move all the way through
+#--------------------Modules---------------------------------
+# from random import randint as renamed_random
+# renamed_random.choice(['fork','spoon'])
+# to import specific things
+# from random import choice, randint
+# Important note
+# import random = imports everything as attribute of random, so random.choice()
+# vs from random import * = everything is imported into current namespace ~ choice()
+#-------------------custom modules---------------------------
+# import <fileName> without .py
+#-------------------external modules------------------------
+# use pip to install external then import normally
+pip install -m autopep8
+# then run from command line on your program
+#--------------------__name__-----------------------------
+# __main__ will be the __name__ if running that program
+# but will be func name if running as an import!
+# when imported all code is run
+# so we need to do
+if __name__ == "__main__":
