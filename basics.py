@@ -30,7 +30,7 @@
 # .pop(<index> or nothing) - removes last item by default or item at index specified
 # .remove(<value>) - removes first occurrence of that value, throws error if not found
 # .index(<value>) - returns index of the passed value
-# .count(<value>) - nmumber of times value appears in list
+# .count(<value>) - number of times value appears in list
 # .reverse()
 # .sort() - ascending order in place
 # .join() - use as "<value>".join(<list>) to join together seperated by passed value
@@ -64,20 +64,20 @@ answer7 = [[num for num in range(10)] for high_num in range(10)]
 # -------------nested lists---------------------------------
 # nest_list = [[1,23,4][6,7,8,9]['hello','goodbye!']]
 # nest_list[0][1] = 23
-# nested list compreehension
+# nested list comprehension
 # [[print(val) for val in upper_vals] for upper_vals in nested_list]
 # --------------dictionaries---------------------------
 # key value pair
 # instructor = {
 # "name": "Tristan",
 # "dog": True,
-# etc: etc
+# etc: "etc"
 # }
 # OR dict(name="cat", age=5)
 # Access by instructor["name"] - throws error if the <val> isn't in there
+# dict.keys() - returns all keys as a list
 # dict.values() - returns all values as a list
 # can iterate through with [value for value in dict.values()]
-# dict.keys() - returns all keys as a list
 # dict.items() returns tuples but returns key and value for all
 # iterate with for key, value in dict.items() OR [key, value for key, value in dict.items()]
 # to check if in a dictionary... you guessed it "if phone in instructor" - CHECKS FOR KEYS!!! NOT VAL
@@ -171,8 +171,49 @@ add = lambda a,b: a + b
 print(add(3,10))
 # lambdas are super nice to just pass a no name function into another function
 #--------------------map-----------------------------------
-# GO BACK AND FINISH THIS SECTION
+# creates a map object ~ normally casted right back to a list
+# map(function, <list/data/etc>)
+# normally will pass a lambda in for func
+def decrement_list(passed):
+    return list(map(lambda x: x - 1, passed))
 
+return list(map(lambda val: "{} {}".format(val['first'], val['last']), l))
+
+#--------------------filter------------------------------------
+# returns a filter object which can be converted to other iterables
+# filter(lambda x:x % 2 == 0. list)
+def remove_negatives(l):
+    return list(filter(lambda x: x >= 0, l))
+
+return list(filter(lambda x: x % 4 == 0, map(lambda x: x*3, lst)))
+#------------------built in funcs----------------------------
+# all(<iterable>) - returns true if all truthy
+# and(<iterable>) - returns true if any element is true
+# to use a generator for gen comprehension syntax is (x for x in list)
+def is_all_strings(l):
+    return all(type(x) == str for x in l)
+
+# sorted() works with other structures besides list like tuples
+# .sort() will change the list is operates on where sorted creates a new sorted list
+# can also pass sorted(liost, key=<key>) - could sort on len, a lambda, etc
+
+# max() - returns max of all args passed or of an iterable!
+# can also sort based off key using a lambda
+# max(names, key=lambda n:len(n))
+
+# reversed() - returns a new reverse iterator ~ must be cast back to a list
+# recall that .reverse() is in place
+
+# len() ~ can overwrite and define this with def(self) __len__
+
+# abs() round() sum()
+
+# zip() - puts multiple lists together like a zipper
+# puts them in pairs and can be cast to a dict or nested lists/tuples
+#------------------generator expressions and sys.getsizeof
+# use a generator expression if all you're doing is iterating once, otherwise if you need a list after you'll
+# use list comprehension
+# if you use sys.getsizeof() on a list and a generator you'll see the generator uses FAR less space
 
 
 #--------------------debugging + error handling------------------
@@ -238,3 +279,20 @@ pip install -m autopep8
 # when imported all code is run
 # so we need to do
 if __name__ == "__main__":
+
+
+
+# ----------------------interesting notes of functions with mutable objects-----------
+# Could pass a func a list and then use keyword: pass to exit out of func
+# changes applied to a mutable object in a function will remain outside of scope of func
+
+
+#-----------------------HTTP Requests---------------------------------------------------
+# requests module
+# python3 -m pip install requests
+# requests.get("www.~")
+# returns response object where we can check code, headers, text, etc
+# can pass requests key args like returning JSON
+
+# Query String
+# allows passing params as a dictionary to your requests
