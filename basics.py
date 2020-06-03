@@ -109,7 +109,7 @@ answer = {letter:0 for letter in 'aeiou'}
 answer = {asc:chr(asc) for asc in range(65,91)}
 
 #--------------------Tuples+Sets-----------------------------------
-# tuple - ordered collection
+# tuple -
 # num = (1,2,3) - tuples are immutable - can't add to them or change
 # faster than lists!
 # data does not need to be unique
@@ -146,7 +146,7 @@ answer = {asc:chr(asc) for asc in range(65,91)}
 # def func(<val>):
 """This is the docstring for instructions on running this"""
 #------------------args and kwargs-------------------------
-# *args - paramater we can pass to func with whatever we want
+# *args - parameter we can pass to func with whatever we want
 # collects any num of additional parameters and creates as a tuple
 # could be named *<anything> but *args is standard
 # when you reference the tuple it provides you just reference as args
@@ -157,7 +157,7 @@ answer = {asc:chr(asc) for asc in range(65,91)}
 # parameter ordering
 # parameters *args default parameters *kwargs
 # example display(a,b,*args,instructor="ham",**kwargs)
-# to unpack tuples and lists just add * in fromt of the variable and
+# to unpack tuples and lists just add * in front of the variable and
 # they'll be passed one at a time
 # if i had list [1,4,6,7,3,1,54,7,89,0,7,4r3455,1] and wanted to pass into a func as indiv args
 myFunc(*list)
@@ -176,6 +176,7 @@ print(add(3,10))
 # normally will pass a lambda in for func
 def decrement_list(passed):
     return list(map(lambda x: x - 1, passed))
+list(map(lambda name: name.upper(), l1))
 
 return list(map(lambda val: "{} {}".format(val['first'], val['last']), l))
 
@@ -195,7 +196,7 @@ def is_all_strings(l):
 
 # sorted() works with other structures besides list like tuples
 # .sort() will change the list is operates on where sorted creates a new sorted list
-# can also pass sorted(liost, key=<key>) - could sort on len, a lambda, etc
+# can also pass sorted(list, key=<key>) - could sort on len, a lambda, etc
 
 # max() - returns max of all args passed or of an iterable!
 # can also sort based off key using a lambda
@@ -223,7 +224,7 @@ def is_all_strings(l):
 # Attribute error - variable does not have an attribute
 # Raising our own errors
 # can raise a variety of exceptions ~ most vague is raise Exception
-# more specific is raise TypeErrorr("Oh no") or raise ValueError("Oh no again") etc
+# more specific is raise TypeError("Oh no") or raise ValueError("Oh no again") etc
 # could be a check for a func like ~ if type(color) is not str
 #--------------------handling errors------------------------
 # try:   ~ at its most basic
@@ -296,3 +297,6 @@ if __name__ == "__main__":
 
 # Query String
 # allows passing params as a dictionary to your requests
+
+
+

@@ -88,3 +88,119 @@ class Chicken:
 def __repr__(self):
     return self.name
 
+
+#----------------------Inheritance--------------------------------------------------
+# basees or parent classes
+# inherit from
+class Cat(Animal):
+
+#-----------------------Properties--------------------------------------------------
+# designate with @property
+# normally used for getter functions
+@property
+def age(self):
+    return self._age
+
+print(obj.age)
+
+# @ .setter
+# method that takes attribute.setter
+# changes value
+
+@age.setter
+def age(self, new_age):
+    self._age = new_age
+
+jane.age = 23
+
+
+
+#----------------------Super()----------------------------------------------------
+def __init__(self, attributes, attribute)
+    super().__init__(attributes):
+    self.attribute = attribute
+
+# initializes inheritited based on parent
+# super only helps initialize attributes
+# methods are available just from passing the parent into class definition
+
+#--------------------Multiple Inheritance-------------------------------------------
+# Normally not used a whole lot, tends to complicate
+# object can have multiple parents
+class Penguin(Land, Sea):
+
+# uses super().__init__ from the first arg class passed
+# if we also wanted Sea class init its just
+Sea.__init__(self, blah)
+
+# ------------------------ Method Resolution Order-----------------------------\
+# where it looks for methods first
+# reference with __mro__
+# mro()
+# help(cls)
+
+# Define your classes below:
+class Mother():
+    def __init__(self, eye_color, hair_color, hair_type):
+        self.eye_color = eye_color
+        self.hair_color = hair_color
+        self.hair_type = hair_type
+
+
+class Father():
+    def __init__(self, eye_color, hair_color, hair_type):
+        self.eye_color = eye_color
+        self.hair_color = hair_color
+        self.hair_type = hair_type
+
+
+class Child(Mother, Father):
+    def __init__(self, eye_color, hair_color, hair_type):
+        super().__init__(eye_color, hair_color, hair_type)
+
+#Alternate way
+
+class Mother:
+    def __init__(self):
+        self.eye_color = "brown"
+        self.hair_color = "dark brown"
+        self.hair_type = "curly"
+
+
+class Father:
+    def __init__(self):
+        self.eye_color = "blue"
+        self.hair_color = "blond"
+        self.hair_type = "straight"
+
+
+class Child(Mother, Father):
+    pass
+
+#Child will have mother attributes
+
+#---------------------------Polymorphism--------------------
+# an objects ability to take many forms
+# the same class method work in a similar way for different classes
+# OR same operation works for different kinds of objects
+# example: len can work with tuples strings and lists
+
+# Override method, rewrite same method in child classes to perform behavior
+
+class Animal():
+    def speak(self):
+        raise NotImplementedError("Great when we want something defined at the lower levels")
+
+class Shark(Animal):
+    def speak(self):
+        return 'Not really speaking but CHOMPING'
+
+class Sea_Urchin(Animal):
+    def speak(self):
+        return 'Not really speaking but URCHINING'
+
+#---------------------dunder methods-----------------------------
+# for your classes you can redefine all sorts of dunder methods to do whatever you'd like!
+# like __repr__ or __len__ or __add__ etc etc!
+
+
